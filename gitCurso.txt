@@ -129,3 +129,5 @@ git reset HEAD arquivo.txt // volta o add
   --envia o arquivo para o link
   git push -u origin master // -u somente para a primeira carga.
   git push origin master  // para as alaterações dos arquivos.
+  
+  git pull origin master // busca e sincroniza os arquivos do servidor.
