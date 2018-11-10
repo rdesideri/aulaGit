@@ -1,0 +1,4 @@
+ignorar.txt
+
+abacaxi/*.jpg
+!abacaxi/img.jpg
