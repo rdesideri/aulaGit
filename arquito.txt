@@ -5,3 +5,5 @@ Outra alteração em nosso arquivo!
 Alteracao para ser mantida ao realizar o reset!
 
 Alteracao para o stash
+
+Alteracoes na branch dev1
