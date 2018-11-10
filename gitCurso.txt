@@ -127,4 +127,5 @@ git reset HEAD arquivo.txt // volta o add
   git remote add origin https://github.com/rdesideri/aulaGit.git
   
   --envia o arquivo para o link
-  git push -u origin master // -u somente para a primeira carga
+  git push -u origin master // -u somente para a primeira carga.
+  git push origin master  // para as alaterações dos arquivos.
