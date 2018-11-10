@@ -1,4 +1,4 @@
-﻿Primeira linha do arquivo!
-Alteracao para o stash =====++++++
-
+﻿﻿Primeira linha do arquivo!
 Alteracoes na branch dev1
+﻿Outra alteracao em nosso arquivo!
+Alteracao deve ser mantida ao realizar o reset!
