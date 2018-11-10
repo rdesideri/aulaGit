@@ -1,0 +1,130 @@
+TIME LINE = BRANCH // Default MASTER
+TAG -> APELIDO PARA O COMMIT = HASH
+HEAD -> Ponteiro mostra qual versão estamos utilizando no momento.
+MASTER -> Nome da linha do tempo.
+
+configurar o git 
+1-) Indicar quem esta utilizando o git nesta máquina:
+git config --global user.name "Rodrigo Maruski Desideri"
+
+2-) Verificar a variável:  
+git config <<variavel>>
+exemplo: git config user.name
+
+3-) configurar o e-mail
+git config --global user.email "rdesideri@gmail.com"
+
+
+4-) Criar repositório:
+git init
+
+5-) Verificar status do arquivo
+git status
+	--Untracked files = arquivos não versionados 
+	--Changes to be committed = arquivo para ser comitado
+	--nothing to commit, working tree clean = sem arquivos para trabalhar todos arquivos versionados e comitados.
+	--modified = Arquivo do repositório alterado.
+	
+	
+
+
+6-) versionar o arquivo (Este procedimento é utilizado para alterações em arquivos e inclusão de arquivos)
+git add <<arquivo>>
+ou git add .   // para todos
+ou git add *.jpg
+
+
+7-) Commit do arquivo (somente para os que estão com o status Changes to be committed)
+git commit -m "Criado arquivo TXT como base do projeto"
+
+8-) Retorna o historico de versões
+git log //Exibe do mais recente para o mais antigo
+git log --reverse //Exibe do mais antigo para o mais recente
+git log --summary //Exibe o status e o nome dos arquivos.
+git log --graph // Exibe a linha do tempo.
+
+git reflog --log mais detalhado
+
+git blame --mostra passo a passo da alteração do arquivo - inclusive o usuário 
+
+9-) Verficar diferenças entre os arquivos:
+git diff
+git diff ad24a12a2c7b379b9cb94..8c6eb70a8fd49396d544103 // compara versões especificas.
+
+10-) Navegar nas versões
+git checkout <<versao desejada>>
+git checkout master //volta para a linha do tempo original
+
+
+11-) Voltar versão na linha do tempo
+git revert HEAD~<<Versao desejada>> exemplo: git revert HEAD~2 // O número é contado iniciando do 0 que é o Head 
+ 
+//somente quando a alteração não foi comitada -- não tem rollback
+git checkout <<arquito.txt>>
+  
+//Voltar somente um arquivo 
+git checkout aaa79dda054b0ad80baaa37dc065617034d37fb1 novo2.txt 
+	-> git add .
+		-> git commit -m "comentario"
+
+		
+12-)Apagar os arquivos e pastas não comitados
+git clean -fd
+git reset HEAD arquivo.txt // volta o add
+
+13-)Apagar commit no tempo de linha	
+  git reset --hard HEAD~1 //apaga totalmente.
+  git reset --soft HEAD~1 //apaga o commit e volta para comitar novamente.
+  git reset --mixed HEAD~1 //volta para ser adicionado novamente.
+  
+  
+  
+  ----------------------
+  TAG------------
+  ------------------
+  TAG -> APELIDO PARA O COMMIT = HASH
+  
+  git tag v2 // coloca tag no HEAD
+  // para incluir uma tag em uma versao anterior -> git checkout <<HASH>> -> git tag v1
+  
+  1-)apagar a tag --- somente apaga a etiqueta
+  git tag -d nome_da_tag
+  
+  
+  -------------------------
+  BRANCH--------------
+  -------------------------
+  
+ TIME LINE = BRANCH // Default MASTER 
+ 
+ git branch dev1 // cria nova branch
+ git branch  // exibe as branchs
+ git checkout master // altera para branch master
+ git merge dev  // incluir as alterações de dev no brunch master --- o apontador tem que estar na master 
+ git branch -d nome_da_branch // apaga a branch
+ 
+ 
+ --------
+ Ignorar arquivos 
+ 
+ criar aquivo .gitignore na raiz 
+ site para ajudar no .gitignore:
+ https://www.gitignore.io
+ 
+ 
+ ----
+ web - github
+ ----
+ 
+ Clonar um projeto:
+ Buscar o link e executar o seguinte comando 
+ git clone https://github.com/douglascabral/Kalendorius.git
+ 
+ erro de autenticacao ssl, utilizar o comando:
+ git config --global http.sslVerify false
+ 
+ -- linca o repositorio com a maquina
+  git remote add origin https://github.com/rdesideri/aulaGit.git
+  
+  --envia o arquivo para o link
+  git push -u origin master // -u somente para a primeira carga
